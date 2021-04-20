@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/SignupFragment">
+
+    <fragment
+        android:id="@+id/SignupFragment"
+        android:name="com.example.mychat.UI.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_SignupFragment_to_signupwithphonefragment"
+            app:destination="@id/signupwithphonefragment"
+            app:popUpTo="@id/SignupFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_SignupFragment_to_profileSetupFragment"
+            app:destination="@id/profileSetupFragment"
+            app:popUpTo="@id/SignupFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_SignupFragment_to_homepageFragment2"
+            app:destination="@id/homepageFragment"
+            app:popUpTo="@id/SignupFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupwithphonefragment"
+        android:name="com.example.mychat.UI.Signupwithphonefragment"
+        android:label="fragment_signupwithphonefragment"
+        tools:layout="@layout/fragment_signupwithphonefragment" >
+        <action
+            android:id="@+id/action_signupwithphonefragment_to_profileSetupFragment"
+            app:destination="@id/profileSetupFragment"
+            app:popUpTo="@id/signupwithphonefragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signupwithphonefragment_to_homepageFragment"
+            app:destination="@id/homepageFragment"
+            app:popUpTo="@id/signupwithphonefragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/homepageFragment"
+        android:name="com.example.mychat.UI.HomepageFragment"
+        android:label="fragment_homepage"
+        tools:layout="@layout/fragment_homepage" >
+        <argument
+            android:name="userid"
+            app:argType="string" />
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_homepageFragment_to_chatFragement"
+            app:destination="@id/chatFragement" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileSetupFragment"
+        android:name="com.example.mychat.UI.ProfileSetupFragment"
+        android:label="fragment_profile_setup"
+        tools:layout="@layout/fragment_profile_setup" >
+        <action
+            android:id="@+id/action_profileSetupFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment"
+            app:popUpTo="@id/profileSetupFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragement"
+        android:name="com.example.mychat.UI.ChatFragement"
+        android:label="fragment_chat_fragement"
+        tools:layout="@layout/fragment_chat_fragement" >
+        <argument
+            android:name="userid"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+</navigation>
